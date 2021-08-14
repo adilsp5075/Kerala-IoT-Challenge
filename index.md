@@ -4,7 +4,7 @@ Hi, I'm Adil S. I'm a 2nd-year Computer Science Engineering student at Governmen
 
 ## Exp 1 : Hello World LED Blinking
 
-### Hardware Needed:
+### Components Required:
    * Arduino Uno Board x1
    * USB Cable x1
    * LED (Any Color) x1
@@ -26,13 +26,16 @@ Hi, I'm Adil S. I'm a 2nd-year Computer Science Engineering student at Governmen
     }
 
 
+### Video
+<iframe width="560" height="315" src="https://drive.google.com/file/d/17K_SVz_C1WAhiJygkxNsVLKPQ4cWJlzs/view?usp=sharing" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ___
 
 
 ## Exp 2 : Traffic Light
 
-### Hardware required
+### Components Required:
   * Arduino board x1
   * USB cable x1
   * Red M5 LED x1
@@ -73,7 +76,7 @@ ___
 
 ## Exp 3 : LED Chasing Effect
 
-### Hardware required
+### Components Required:
   * LED x6
   * Arduino board x1
   * 220Ω resistor x6
