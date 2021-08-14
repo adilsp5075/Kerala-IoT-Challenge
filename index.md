@@ -111,4 +111,3 @@ ___
     
     ____
 
-<footer align="center">© 2021 Adil S </footer>
