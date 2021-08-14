@@ -27,7 +27,7 @@ Hi, I'm Adil S. I'm a 2nd-year Computer Science Engineering student at Governmen
 
 
 ### Video
-<iframe width="560" height="315" src="https://drive.google.com/file/d/17K_SVz_C1WAhiJygkxNsVLKPQ4cWJlzs/view?usp=sharing" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="src/blink.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ___
