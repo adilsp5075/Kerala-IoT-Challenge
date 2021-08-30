@@ -147,8 +147,36 @@ ___
     
     
 ### Video
-<iframe width="560" height="315" src="src/chaser.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="src/push_button.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     
 ___
 
 
+## Exp 5 : Buzzer
+
+### Components Required:
+
+  * Arduino Uno
+  * Buzzer x1
+  * Breadboard x1
+  * Breadboard Jumper Wire x2
+  * USB cable x1
+
+
+### Code
+
+    int buzzer=8;// initialize digital IO pin that controls the buzzer
+    void setup() 
+    { 
+      pinMode(buzzer,OUTPUT);// set pin mode as “output”
+    } 
+    void loop() 
+    {
+    digitalWrite(buzzer, HIGH); // produce sound
+    }
+    
+    
+### Video
+<iframe width="560" height="315" src="src/buzzer.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+___
