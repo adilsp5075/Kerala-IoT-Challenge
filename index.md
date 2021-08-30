@@ -180,3 +180,51 @@ ___
 <iframe width="560" height="315" src="src/buzzer.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     
 ___
+
+## Exp 6 : RGB LED
+
+### Components Required:
+
+  * Arduino Uno
+  * USB Cable x1
+  * RGB LED x1
+  * Resistor x3
+  * Breadboard jumper wire x5
+
+### Code
+
+    int redpin = 11; //select the pin for the red LED
+    int bluepin =10; // select the pin for the blue LED
+    int greenpin =9;// select the pin for the green LED
+    int val;
+    void setup() {
+      pinMode(redpin, OUTPUT);
+      pinMode(bluepin, OUTPUT);
+      pinMode(greenpin, OUTPUT);
+      Serial.begin(9600);
+    }
+    void loop() 
+    {
+    for(val=255; val>0; val--)
+      {
+       analogWrite(11, val);
+       analogWrite(10, 255-val);
+       analogWrite(9, 128-val);
+       delay(1); 
+      }
+    for(val=0; val<255; val++)
+      {
+       analogWrite(11, val);
+       analogWrite(10, 255-val);
+       analogWrite(9, 128-val);
+       delay(1); 
+      }
+     Serial.println(val, DEC);
+    }
+
+
+### Video
+<iframe width="560" height="315" src="src/RGB.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+___
+
