@@ -311,3 +311,45 @@ ___
 <iframe width="560" height="315" src="src/ldr.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     
 ___
+
+## Exp 8 : Flame Sensor
+
+### Components Required:
+
+  * Arduino Uno
+  * Flame Sensor x1
+  * Buzzer x1
+  * 10K Resistor x1
+  * Breadboard Jumper Wire x6
+  * USB cable x1
+
+### Code
+
+    int flame=0;// select analog pin 0 for the sensor
+    int Beep=9;// select digital pin 9 for the buzzer
+    int val=0;// initialize variable
+     void setup() 
+    {
+      pinMode(Beep,OUTPUT);// set LED pin as “output”
+     pinMode(flame,INPUT);// set buzzer pin as “input”
+     Serial.begin(9600);// set baud rate at “9600”
+     } 
+    void loop() 
+    { 
+      val=analogRead(flame);// read the analog value of the sensor 
+      Serial.println(val);// output and display the analog value
+      if(val>=600)// when the analog value is larger than 600, the buzzer will buzz
+      {  
+       digitalWrite(Beep,HIGH); 
+       }else 
+       {  
+         digitalWrite(Beep,LOW); 
+        }
+       delay(500); 
+    }
+    
+    
+### Video
+<iframe width="560" height="315" src="src/flame.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+___
