@@ -473,6 +473,6 @@ ___
     }
     
 ### Image
-<img width="560" height="315" src="src/pot.png" title="Google image" frameborder="0">
+<img width="560" height="315" src="src/pot.PNG" title="Google image" frameborder="0">
     
 ___
