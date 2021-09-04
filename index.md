@@ -442,7 +442,7 @@ ___
     
 ___
 
-## Exp 11 :Potentiometer analog Value Reading
+## Exp 11 : Potentiometer analog Value Reading
 
 ### Components Required:
 
@@ -476,3 +476,38 @@ ___
 <img width="560" height="315" src="src/pot.PNG" title="Google image" frameborder="0">
     
 ___
+
+## Extras on Potentiometer
+
+### Components Required:
+
+  * Arduino Uno
+  * 10K Potentiometer x1
+  * Breadboard x1
+  * Breadboard Jumper Wire x3
+  * USB cable x1
+  * 1k ohms resistor x1
+  * LED x1
+
+### Code
+
+    const int analog_ip = A0;
+    const int LED = 3;
+    int inputVal = 0;
+
+    void setup() {
+      pinMode (LED, OUTPUT);
+    }
+
+    void loop() {
+      inputVal = analogRead(analog_ip);
+      analogWrite (LED, inputVal/4);
+      delay(100);
+    }
+    
+    
+### Video
+<iframe width="560" height="315" src="src/pot.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+___
+
