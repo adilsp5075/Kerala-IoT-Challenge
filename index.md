@@ -353,3 +353,56 @@ ___
 <iframe width="560" height="315" src="src/flame.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     
 ___
+
+## Extras on Flame sensor
+
+### Components Required:
+
+  * Arduino Uno
+  * Active buzzer
+  * Breadboard Jumper Wire x5
+  * Flame Sensor x1
+  * Red LED x1
+  * Green LED x1
+  * 10k ohms resistor x1
+  * 220 ohms resistor x2
+
+### Code
+
+    //Arduino Flame Sensor
+    const int buzzerPin = 12;
+    const int flamePin = 11;
+    int Flame = HIGH;
+    int redled = 5;
+    int greenled = 6;
+    void setup() 
+    {
+      pinMode(buzzerPin, OUTPUT);
+      pinMode(redled, OUTPUT);
+      pinMode(greenled, OUTPUT);
+
+      pinMode(flamePin, INPUT);
+      Serial.begin(9600);
+    }
+
+    void loop() 
+    {
+      Flame = digitalRead(flamePin);
+      if (Flame== LOW)
+      {
+        digitalWrite(buzzerPin, HIGH);
+        digitalWrite(redled, HIGH);
+        digitalWrite(greenled, LOW);
+      }
+      else
+      {
+        digitalWrite(buzzerPin, LOW);
+        digitalWrite(greenled, HIGH);
+        digitalWrite(redled, LOW);
+      }
+    }
+
+### Video
+<iframe width="560" height="315" src="src/flame1.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+___
