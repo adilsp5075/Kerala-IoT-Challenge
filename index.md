@@ -265,3 +265,49 @@ ___
 <img width="560" height="315" src="src/LDR.jpg" title="Google image" frameborder="0">
     
 ___
+
+## Extras on LDR
+
+### Components Required:
+
+  * Arduino Uno
+  * Active buzzer
+  * Breadboard Jumper Wire x5
+  * LDR x1
+  * LED x1
+  * 10k and 220 ohms resistors
+
+### Code
+
+    //set pin numbers
+    const int ledPin = 13;
+    const int buzzerPin = 12;
+    const int ldrPin = A0;
+    void setup () {
+      Serial.begin(9600);
+      pinMode(ledPin, OUTPUT);
+      pinMode(buzzerPin, OUTPUT);
+      pinMode(ldrPin, INPUT);
+    }
+    void loop() {
+      int ldrStatus = analogRead(ldrPin);  //read the state of the LDR value
+      if (ldrStatus >= 400) {
+        tone(buzzerPin, 100);
+        digitalWrite(ledPin, HIGH);
+        delay(100);
+        noTone(buzzerPin);
+        digitalWrite(ledPin, LOW);
+        delay(100);
+        Serial.println("----------- ALARM ACTIVATED -----------"); 
+      }
+      else {
+        noTone(buzzerPin);
+        digitalWrite(ledPin, LOW);
+        Serial.println("ALARM DEACTIVATED");
+      }
+    }
+
+### Video
+<iframe width="560" height="315" src="src/ldr.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+___
