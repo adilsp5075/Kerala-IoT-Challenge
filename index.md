@@ -262,6 +262,6 @@ ___
     
     
 ### Image
-<iframe width="560" height="315" src="src/LDR.jpg" title="Google Image" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe  src="src/LDR.jpg" title="Google Image" frameborder="0" ></iframe>
     
 ___
