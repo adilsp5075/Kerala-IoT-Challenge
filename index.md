@@ -262,6 +262,6 @@ ___
     
     
 ### Image
-<img width="560" height="315" src="src/RGB.jpg" title="Google image" frameborder="0"></img>
+<img width="560" height="315" src="src/LDR.jpg" title="Google image" frameborder="0"></img>
     
 ___
