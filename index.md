@@ -674,4 +674,74 @@ ___
     
 ___
 
-## ASSIGNMENT 1 : THERMOMETER
+# ASSIGNMENT
+
+## 1 : THERMOMETER
+
+
+### Components Required:
+
+  * Arduino Uno
+  * LED x6
+  * Breadboard x1
+  * Breadboard Jumper Wire x10
+  * USB cable x1
+  * LM35 x1
+  * 220 ohm Resistor x6
+
+### Code
+
+    int temp = A0;
+    int LED1=8;
+    int LED6=13;
+    void setup() {
+      pinMode(temp,INPUT);
+      for(int i=LED1;i<=LED6;++i){
+        pinMode(i,OUTPUT);
+      }
+      Serial.begin(9600);
+    }
+
+    void ledOn(int led){
+       for(int i=LED1;i<=LED1+led;++i){
+       digitalWrite(i,HIGH);
+      }
+    }
+
+    void thermometerScale(float temp){
+     if(temp<-13.32)
+        ledOn(0);
+      else if(temp<20.68)
+        ledOn(1);
+      else if(temp<47.48)
+        ledOn(2);
+      else if(temp<81.64)
+        ledOn(3);
+      else if(temp<115.80)
+        ledOn(4);
+      else if(temp<149)
+        ledOn(5);
+      else 
+        ledOn(6);
+
+    }
+
+
+    void loop() {
+
+      int val = analogRead(temp);
+      float dat;// define variable
+      val=analogRead(0);
+      dat=(125*val)>>8;// temperature calculation formula
+      Serial.print("Temp ");
+      Serial.print(dat);
+      Serial.println(" C");
+      thermometerScale(dat);
+      delay(5000);
+    }
+    
+### Image
+<img  src="src/pot.PNG" title="Google image" frameborder="0">
+![Thermometer.jpg](src/ass1.jpg "Thermometer")
+    
+___
