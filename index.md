@@ -262,7 +262,8 @@ ___
     
     
 ### Image
-<img width="560" height="315" src="src/LDR.jpg" title="Google image" frameborder="0">
+![LDR.jpg](src/LDR.jpg "LDR")
+
     
 ___
 
@@ -438,7 +439,7 @@ ___
 
 
 ### Image
-<img width="560" height="315" src="src/temp.png" title="Google image" frameborder="0">
+![Temp.png](src/temp.png "Temperature")
     
 ___
 
@@ -473,7 +474,7 @@ ___
     }
     
 ### Image
-<img width="560" height="315" src="src/pot.PNG" title="Google image" frameborder="0">
+![pott_read.png](src/pot.PNG "pottentiometer")
     
 ___
 
@@ -741,7 +742,6 @@ ___
     }
     
 ### Image
-<img  src="src/pot.PNG" title="Google image" frameborder="0">
 ![Thermometer.jpg](src/ass1.jpg "Thermometer")
     
 ___
