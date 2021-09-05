@@ -443,6 +443,156 @@ ___
     
 ___
 
+## Exp 10:IR Remote Control Using TSOP
+
+### Components Required:
+
+  * Arduino Uno
+  * Breadboard x1
+  * Breadboard Jumper Wire x8
+  * USB cable x1
+  * Infrared Receiver *1
+  * LED x4
+  * 220 ohm resistor x4
+
+
+### Code
+
+    #include <IRremote.h>
+    int RECV_PIN = 3;
+    int LED1 = 8;
+    int LED2 = 9;
+    int LED3 = 10;
+    int LED4 = 11;
+
+    const unsigned long LED1_IR = 0xFD32CD;
+    const unsigned long LED2_IR = 0xFDB24D;
+    const unsigned long LED3_IR = 0xFD728D;
+    const unsigned long LED4_IR = 0xFDF20D;
+    const unsigned long TOGGLE_IR = 0xFD00FF;
+
+    IRrecv irrecv(RECV_PIN);
+    decode_results results;
+
+    void dump(decode_results results) {
+      switch (results.decode_type) {
+        case NEC:
+          Serial.println("NEC");
+          break;
+        case SONY:
+          Serial.println("SONY");
+          break;
+        case RC5:
+          Serial.println("RC5");
+          break;
+        case RC6:
+          Serial.print("RC6:");
+          break;
+        case DISH:
+          Serial.print("DISH:");
+          break;
+        case SHARP:
+          Serial.print("SHARP:");
+          break;
+        case JVC:
+          Serial.print("JVC:");
+          break;
+
+        case SAMSUNG:
+          Serial.print("SAMSUNG:");
+          break;
+        case LG:
+          Serial.print("LG:");
+          break;
+        case WHYNTER:
+          Serial.print("WHYNTER:");
+          break;
+
+        case PANASONIC:
+          Serial.print("PANASONIC:");
+          break;
+        case DENON:
+          Serial.print("DENON:");
+          break;
+        default:
+        case UNKNOWN:
+          Serial.print("UNKNOWN:");
+          break;
+      }
+      Serial.print(results.value, HEX);
+      Serial.print(" (");
+      Serial.print(results.bits, DEC);
+      Serial.println(" bits)");
+    }
+
+    void lights(int a,int b,int c,int d){
+      digitalWrite(LED1,a);
+      digitalWrite(LED2,b);
+      digitalWrite(LED3,c);
+      digitalWrite(LED4,d);
+    }
+
+    void setup()
+    {
+      pinMode(RECV_PIN, INPUT);
+      pinMode(LED1, OUTPUT);
+      pinMode(LED2, OUTPUT);
+      pinMode(LED3, OUTPUT);
+      pinMode(LED4, OUTPUT);
+      pinMode(13, OUTPUT);
+      Serial.begin(9600);
+      irrecv.enableIRIn(); // Start the receiver
+    }
+    int on = 0;
+    unsigned long last = millis();
+    void loop()
+    {
+      if (irrecv.decode(&results))
+      {
+        // If it's been at least 1/4 second since the last
+        // IR received, toggle the relay
+        if (millis() - last > 250)
+        {
+          on = !on;
+          digitalWrite(13, on ? HIGH : LOW);
+          dump(results);
+        }
+
+
+        switch (results.value){
+          case LED1_IR :
+                Serial.print(results.value);
+                lights(1,0,0,0);
+                break;
+          case LED2_IR :
+                lights(0,1,0,0);
+                break;
+          case LED3_IR :
+                lights(0,0,1,0);
+                break;
+          case LED4_IR :
+                lights(0,0,0,1);
+                break;
+          case TOGGLE_IR :
+                lights(on,on,on,on);
+                break;
+
+        }
+
+
+
+        last = millis();
+        irrecv.resume(); // Receive the next value
+      }
+    }
+    
+    
+### Video
+<iframe width="560" height="315" src="src/IR2.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+___
+
+
 ## Extras on IR Remote Control Using TSOP
 
 ### Components Required:
