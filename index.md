@@ -443,6 +443,50 @@ ___
     
 ___
 
+## Extras on IR Remote Control Using TSOP
+
+### Components Required:
+
+  * Arduino Uno
+  * Breadboard x1
+  * Breadboard Jumper Wire x3
+  * USB cable x1
+  * Infrared Receiver *1
+
+### Code
+
+        // Include IR Remote Library by Ken Shirriff
+    #include <IRremote.h>
+
+    // Define sensor pin
+    const int RECV_PIN = 4;
+
+    // Define IR Receiver and Results Objects
+    IRrecv irrecv(RECV_PIN);
+    decode_results results;
+
+
+    void setup(){
+      // Serial Monitor @ 9600 baud
+      Serial.begin(9600);
+      // Enable the IR Receiver
+      irrecv.enableIRIn();
+    }
+
+    void loop(){
+      if (irrecv.decode(&results)){
+        // Print Code in HEX
+            Serial.println(results.value, HEX);
+            irrecv.resume();
+      }
+    }
+
+    
+### Image
+![IR_sensor.png](src/IR.PNG "IR_sensor")
+___
+
+
 ## Exp 11 : Potentiometer analog Value Reading
 
 ### Components Required:
